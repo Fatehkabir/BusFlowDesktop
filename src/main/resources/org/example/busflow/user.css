@@ -1,0 +1,21 @@
+.top {
+    -fx-background-color: linear-gradient(to bottom right, #2a91e7, #1b80e4);
+    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+}
+
+.left {
+    -fx-background-color: linear-gradient(to bottom right, #1b80e4, #ccc4c4, #ffd400);
+}
+.frame {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 30 40 30 40;
+}
+
+.shadow{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.4), 5,0,0,0);
+}

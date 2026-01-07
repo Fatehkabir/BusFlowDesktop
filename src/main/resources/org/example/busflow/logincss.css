@@ -1,0 +1,12 @@
+.frame {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 40;
+}
+
+.shadow{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.4), 5,0,0,0);
+}
+.back{
+    -fx-background-color:linear-gradient(to bottom right,#1b80e4,#ccc4c4,#ffd400);
+}
