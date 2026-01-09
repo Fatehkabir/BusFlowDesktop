@@ -145,7 +145,7 @@
                 </VBox>
 
                 <!-- Add Bus pane (contains form + table) -->
-                <VBox fx:id="addBusPane" spacing="10">
+                <VBox fx:id="addBusPane" spacing="10" visible="false">
                     <children>
                         <VBox spacing="10" stylesheets="@admin.css">
                             <styleClass>
@@ -373,11 +373,6 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="899.0">
                                     <children>
-                                        <Button fx:id="updateCustomerButton" mnemonicParsing="false" onAction="#handleUpdateCustomer" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: orange;" text="Update" textFill="WHITE" HBox.hgrow="ALWAYS">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Button>
                                         <Button fx:id="deleteCustomerButton" mnemonicParsing="false" onAction="#handleDeleteCustomer" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" HBox.hgrow="ALWAYS">
                                             <HBox.margin>
                                                 <Insets left="20.0" />

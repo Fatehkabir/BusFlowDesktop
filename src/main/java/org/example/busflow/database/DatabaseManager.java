@@ -22,7 +22,7 @@ public class DatabaseManager {
     private static void createTables() throws SQLException {
         Statement stmt = conn.createStatement();
 
-        // Users table
+
         String usersTable = "CREATE TABLE IF NOT EXISTS users (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "username TEXT UNIQUE NOT NULL," +
@@ -33,7 +33,7 @@ public class DatabaseManager {
                 "role TEXT NOT NULL CHECK(role IN ('admin', 'user'))" +
                 ")";
 
-        // Buses table
+
         String busesTable = "CREATE TABLE IF NOT EXISTS buses (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "bus_number TEXT UNIQUE NOT NULL," +
@@ -47,7 +47,6 @@ public class DatabaseManager {
                 "fare REAL NOT NULL" +
                 ")";
 
-        // Tickets table
         String ticketsTable = "CREATE TABLE IF NOT EXISTS tickets (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "user_id INTEGER NOT NULL," +
@@ -103,7 +102,6 @@ public class DatabaseManager {
         }
     }
 
-    // User authentication
     public static ResultSet authenticateUser(String username, String password) {
         try {
             String query = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -117,7 +115,6 @@ public class DatabaseManager {
         }
     }
 
-    // Register new user
     public static boolean registerUser(String username, String password, String fullName, String email, String phone) {
         try {
             String query = "INSERT INTO users (username, password, full_name, email, phone, role) VALUES (?, ?, ?, ?, ?, 'user')";
@@ -135,7 +132,6 @@ public class DatabaseManager {
         }
     }
 
-    // Add bus
     public static boolean addBus(String busNumber, String busName, String source, String destination,
                                  String departureTime, String arrivalTime, int totalSeats, double fare) {
         try {
@@ -159,7 +155,6 @@ public class DatabaseManager {
         }
     }
 
-    // Update bus
     public static boolean updateBus(int busId, String busNumber, String busName, String source, String destination,
                                     String departureTime, String arrivalTime, int totalSeats, double fare) {
         try {
@@ -183,7 +178,6 @@ public class DatabaseManager {
         }
     }
 
-    // Delete bus
     public static boolean deleteBus(int busId) {
         try {
             String query = "DELETE FROM buses WHERE id = ?";
@@ -197,7 +191,6 @@ public class DatabaseManager {
         }
     }
 
-    // Get all buses
     public static ResultSet getAllBuses() {
         try {
             String query = "SELECT * FROM buses";
@@ -209,7 +202,6 @@ public class DatabaseManager {
         }
     }
 
-    // Search buses
     public static ResultSet searchBuses(String source, String destination) {
         try {
             String query = "SELECT * FROM buses WHERE source LIKE ? AND destination LIKE ?";
@@ -223,7 +215,6 @@ public class DatabaseManager {
         }
     }
 
-    // Book ticket
     public static boolean bookTicket(int userId, int busId, String journeyDate, int seatsBooked, double totalFare) {
         try {
             Connection c = getConnection();
@@ -271,7 +262,6 @@ public class DatabaseManager {
         }
     }
 
-    // Update booking status
     public static boolean updateBookingStatus(int ticketId, String updatedStatus) {
         try {
             String query = "UPDATE tickets SET status = ? WHERE id = ?";
@@ -286,7 +276,6 @@ public class DatabaseManager {
         }
     }
 
-    // Cancel ticket
     public static boolean cancelTicket(int ticketId) {
         try {
             Connection c = getConnection();
@@ -332,7 +321,6 @@ public class DatabaseManager {
         }
     }
 
-    // Get user tickets
     public static ResultSet getUserTickets(int userId) {
         try {
             String query = "SELECT t.*, b.bus_number, b.bus_name, b.source, b.destination, " +
@@ -347,7 +335,6 @@ public class DatabaseManager {
         }
     }
 
-    // Get all users
     public static ResultSet getAllUsers() {
         try {
             String query = "SELECT id, username, full_name, email, phone, role FROM users WHERE role = 'user'";
@@ -359,7 +346,6 @@ public class DatabaseManager {
         }
     }
 
-    // Get all tickets
     public static ResultSet getAllTickets() {
         try {
             String query = "SELECT t.*, u.username, u.full_name, b.bus_number, b.bus_name, b.source, b.destination " +
@@ -375,7 +361,6 @@ public class DatabaseManager {
         }
     }
 
-    // Update user
     public static boolean updateUser(int userId, String fullName, String email, String phone) {
         try {
             String query = "UPDATE users SET full_name = ?, email = ?, phone = ? WHERE id = ?";
@@ -392,7 +377,6 @@ public class DatabaseManager {
         }
     }
 
-    // Delete user
     public static boolean deleteUser(int userId) {
         try {
             String query = "DELETE FROM users WHERE id = ?";
@@ -406,7 +390,6 @@ public class DatabaseManager {
         }
     }
 
-    // Get statistics
     public static int getTotalBuses() {
         try {
             String query = "SELECT COUNT(*) FROM buses";
@@ -455,7 +438,6 @@ public class DatabaseManager {
         return 0.0;
     }
 
-    // Get booking status count for pie chart
     public static Map<String, Integer> getBookingStatusCount() {
         Map<String, Integer> statusCount = new HashMap<>();
         statusCount.put("confirmed", 0);
@@ -478,7 +460,6 @@ public class DatabaseManager {
         return statusCount;
     }
 
-    // Get revenue by route for bar chart
     public static Map<String, Double> getRouteRevenue() {
         Map<String, Double> routeRevenue = new HashMap<>();
 
