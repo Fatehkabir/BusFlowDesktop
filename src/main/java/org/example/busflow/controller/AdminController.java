@@ -42,8 +42,6 @@ public class AdminController {
     @FXML private VBox bookingsPane;
     @FXML private VBox customersPane;
     @FXML private VBox dashboardPane;
-
-    // Buttons in the add-bus pane
     @FXML private Button addBusButton;
     @FXML private Button updateBusButton;
     @FXML private Button deleteBusButton;
@@ -51,14 +49,11 @@ public class AdminController {
     private final ObservableList<BusData> busesData = FXCollections.observableArrayList();
     private final ObservableList<BookingData> bookingsData = FXCollections.observableArrayList();
     private final ObservableList<CustomerData> customersData = FXCollections.observableArrayList();
-
-    // Statistics labels
     @FXML private Label totalBusesLabel;
     @FXML private Label totalUsersLabel;
     @FXML private Label totalBookingsLabel;
     @FXML private Label totalRevenueLabel;
 
-    // Charts
     @FXML private PieChart bookingStatusChart;
     @FXML private BarChart<String, Number> routeRevenueChart;
 
@@ -543,7 +538,7 @@ public class AdminController {
     @FXML
     private void handleLogout() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/claudeproject/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/busflow/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) adminNameLabel.getScene().getWindow();
@@ -574,7 +569,6 @@ public class AdminController {
         alert.showAndWait();
     }
 
-    // Data classes
     public static class BusData {
         public String busId, busNumber, busName, route, time, seats, fare;
         public String source, destination, departureTime, arrivalTime, totalSeats;
