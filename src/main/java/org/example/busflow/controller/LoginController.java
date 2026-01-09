@@ -36,7 +36,7 @@ public class LoginController {
         }
 
         try {
-            ResultSet rs = DatabaseManager.authenticateUser(username,password);
+            ResultSet rs = DatabaseManager.authenticateUser(username, password);
             if (rs != null && rs.next()) {
                 int userId = rs.getInt("id");
                 String fullName = rs.getString("full_name");
@@ -45,9 +45,9 @@ public class LoginController {
                 Stage stage = (Stage) usernameField.getScene().getWindow();
 
                 if (role.equals("admin")) {
-                    loadAdminPanel(stage,fullName);
+                    loadAdminPanel(stage, fullName);
                 } else {
-                    loadUserPanel(stage,userId,fullName);
+                    loadUserPanel(stage, userId, fullName);
                 }
             } else {
                 messageLabel.setText("❌ Invalid username or password");
@@ -78,11 +78,11 @@ public class LoginController {
 
     private void loadAdminPanel(Stage stage, String name) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/busflow/Admin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/busflow/admin.fxml"));
             Parent root = loader.load();
 
-            AdminController controller = loader.getController();
-            controller.setAdminName(name);
+            org.example.busflow.controller.AdminController controller = loader.getController();
+            controller.setAdminName(name);  // Now works
 
             stage.setScene(new Scene(root));
             stage.setTitle("Admin Dashboard - BusFlow");
@@ -93,7 +93,19 @@ public class LoginController {
     }
 
     private void loadUserPanel(Stage stage, int userId, String name) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/busflow/user.fxml"));
+            Parent root = loader.load();
 
+            org.example.busflow.controller.UserController controller = loader.getController();
+            controller.setUserData(userId, name);
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("User Panel - BusFlow");
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to load user panel", Alert.AlertType.ERROR);
+        }
     }
 
     private void showAlert(String title, String content, Alert.AlertType type) {

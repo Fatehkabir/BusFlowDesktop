@@ -242,7 +242,7 @@
                      </children>
                   </HBox>
                   <Separator prefHeight="22.0" prefWidth="447.0" />
-                  <TableView onSort="#searchResultsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                   <TableView fx:id="searchResultsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>

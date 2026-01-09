@@ -343,7 +343,7 @@ public class UserController {
     @FXML
     private void handleLogout() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/claudeproject/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/busflow/login.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) userNameLabel.getScene().getWindow();

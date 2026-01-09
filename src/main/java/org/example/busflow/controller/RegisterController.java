@@ -32,7 +32,6 @@ public class RegisterController {
         String email = emailField.getText().trim();
         String phone = phoneField.getText().trim();
 
-        // Validation
         if (username.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
             messageLabel.setText("⚠️ Please fill all required fields");
             messageLabel.setStyle("-fx-text-fill: red;");
@@ -63,7 +62,6 @@ public class RegisterController {
             return;
         }
 
-        // Register user
         boolean success = DatabaseManager.registerUser(username, password, fullName, email, phone);
 
         if (success) {
@@ -72,7 +70,6 @@ public class RegisterController {
 
             clearFields();
 
-            // Auto close after 2 seconds
             new Thread(() -> {
                 try {
                     Thread.sleep(2000);
