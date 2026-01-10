@@ -91,7 +91,7 @@
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="profilePane" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@user.css">
+            <VBox fx:id="profilePane" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@user.css" visible="false">
                <StackPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </StackPane.margin>
@@ -100,12 +100,12 @@
                   <String fx:value="shadow" />
                </styleClass>
                <children>
-                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="192.0" text="👤">
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="192.0" text="👤" textFill="#105ae4">
                      <font>
                         <Font size="72.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="34.0" prefWidth="99.0" text="My Profile">
+                  <Label prefHeight="34.0" prefWidth="99.0" text="My Profile" textFill="#0ee1c9">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
@@ -124,52 +124,52 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="30.0" prefWidth="200.0" text="Full Name :">
+                        <Label prefHeight="30.0" prefWidth="200.0" text="Full Name :" textFill="#ec9703">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="profileNameLabel" prefHeight="30.0" prefWidth="200.0" text="Label" GridPane.columnIndex="1">
+                        <Label fx:id="profileNameLabel" prefHeight="30.0" prefWidth="200.0" text="Label" textFill="#ec9703" GridPane.columnIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="30.0" prefWidth="200.0" text="Username :" GridPane.rowIndex="1">
+                        <Label prefHeight="30.0" prefWidth="200.0" text="Username :" textFill="#ea0000" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="profileUsernameLabel" prefHeight="30.0" prefWidth="200.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="profileUsernameLabel" prefHeight="30.0" prefWidth="200.0" text="Label" textFill="#ea0000" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="30.0" prefWidth="200.0" text="Email :" GridPane.rowIndex="2">
+                        <Label prefHeight="30.0" prefWidth="200.0" text="Email :" textFill="#bdcc3a" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="profileEmailLabel" prefHeight="30.0" prefWidth="200.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label fx:id="profileEmailLabel" prefHeight="30.0" prefWidth="200.0" text="Label" textFill="#bdcc3a" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="30.0" prefWidth="200.0" text="Phone no. :" GridPane.rowIndex="3">
+                        <Label prefHeight="30.0" prefWidth="200.0" text="Phone no. :" textFill="#1c0dec" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="profilePhoneLabel" prefHeight="30.0" prefWidth="200.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label fx:id="profilePhoneLabel" prefHeight="30.0" prefWidth="200.0" text="Label" textFill="#1c0dec" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="30.0" prefWidth="200.0" text="Total Bookings :" GridPane.rowIndex="4">
+                        <Label prefHeight="30.0" prefWidth="200.0" text="Total Bookings :" textFill="#3bec3e" GridPane.rowIndex="4">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="profileBookingsLabel" prefHeight="30.0" prefWidth="200.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label fx:id="profileBookingsLabel" prefHeight="30.0" prefWidth="200.0" text="Label" textFill="#3bec3e" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -187,7 +187,7 @@
                   <String fx:value="shadow" />
                </styleClass>
                <children>
-                  <Label prefHeight="60.0" prefWidth="245.0" text="🎫 My Tickets">
+                  <Label prefHeight="60.0" prefWidth="245.0" text="🎫 My Tickets" textFill="#ff9000">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -217,7 +217,7 @@
                   <String fx:value="shadow" />
                </styleClass>
                <children>
-                  <Label prefHeight="45.0" prefWidth="447.0" text="Choose your travel">
+                  <Label prefHeight="45.0" prefWidth="447.0" text="🚌 Choose your travel" textFill="#0ed930">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
