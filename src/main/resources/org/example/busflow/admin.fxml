@@ -303,7 +303,7 @@
                 </VBox>
 
                 <!-- Bookings pane -->
-                <VBox fx:id="bookingsPane" prefHeight="200.0" prefWidth="100.0" visible="false">
+                <VBox fx:id="bookingsPane" prefHeight="200.0" prefWidth="100.0">
                     <children>
                         <HBox prefHeight="162.0" prefWidth="1000.0">
                             <children>
@@ -314,7 +314,6 @@
                                 </Label>
                                 <HBox alignment="BOTTOM_RIGHT" prefHeight="130.0" prefWidth="810.0" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <Button fx:id="updateBookingButton" mnemonicParsing="false" onAction="#handleUpdateBooking" prefHeight="26.0" prefWidth="100.0" text="Update" />
                                         <Button fx:id="cancelBookingButton" mnemonicParsing="false" onAction="#handleCancelBooking" prefHeight="26.0" prefWidth="100.0" text="Cancel">
                                             <HBox.margin>
                                                 <Insets left="10.0" />
@@ -344,7 +343,7 @@
                 </VBox>
 
                 <!-- Customers pane -->
-                <VBox fx:id="customersPane" prefHeight="200.0" prefWidth="100.0">
+                <VBox fx:id="customersPane" prefHeight="200.0" prefWidth="100.0" visible="false">
                     <children>
                         <VBox prefHeight="110.0" prefWidth="979.0" stylesheets="@admin.css">
                             <styleClass>
